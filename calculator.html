@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            width: 300px;
+            background-color: rgb(47, 58, 114);
+            padding: 10px;
+            border-radius: 10px;
+
+        }
+        .scr{
+            padding: 10px;
+        }
+        .display{
+            background-color:rgb(238, 237, 235);
+            border: none;
+            border-radius: 3px;
+            padding: 10px;
+            width: 100%;
+            font-size: 20px;
+            text-align: right;
+            box-sizing: border-box;
+        }
+        .btn{
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        .num{
+    border-radius: 5px;
+    border: none;
+    padding: 15px ;
+    width: calc(100% / 4 - 10px);
+    background-color: rgb(12, 144, 144);
+   
+       }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="scr">
+            <input type="text" class="display">
+        </div>
+        <div class="btn">
+            <button class="num 7">7</button>
+            <button class="num 8">8</button>
+            <button class="num 9">9</button>
+            <button class="num clr">Clear</button>
+            <button class="num 4">4</button>
+            <button class="num 5">5</button>
+            <button class="num 6">6</button>
+            <button class="num plus">+</button>
+            
+            <button class="num 1">1</button>
+            <button class="num 2">2</button>
+            <button class="num 3">3</button>
+            <button class="num minus">-</button>
+            
+            <button class="num dot">.</button>
+            <button class="num 0">0</button>
+            <button class="num =">=</button>
+            <button class="num divi">/</button>
+            <button class="num mul">*</button>
+            <button class="num mod">%</button>
+            
+        </div>
+    </div>
+
+    </script> 
+   <script>
+    const btns = document.querySelectorAll(".num");
+const display = document.querySelector(".display");
+
+// Clear function
+function clr() {
+    display.value = "";
+}
+
+// Append value to the display
+function showOn(value) {
+    display.value += value;
+}
+
+// Calculate result using eval
+function result() {
+    try {
+        display.value = eval(display.value);
+    } catch {
+        display.value = "error";
+    }
+}
+
+// Add event listeners to each button
+btns.forEach(button => {
+    button.addEventListener("click", () => {
+        const value = button.innerHTML;
+
+        if (value === "Clear") {
+            clr();
+        } else if (value === "=") {
+            result();
+        } else {
+            showOn(value);
+        }
+    });
+});
+
+   </script> 
+</body>
+
+</html>

@@ -1,3 +1,3 @@
 # basic-calculator
 <br>
-https://ayesha881.github.io/basic-calculator/
+[Click here to view the live output] https://ayesha881.github.io/basic-calculator/
